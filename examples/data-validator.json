@@ -1,0 +1,81 @@
+[
+    {
+        "id": "f2a727c82125835f",
+        "type": "tab",
+        "label": "Data Validator",
+        "disabled": false,
+        "info": "Validate your input for proper data type \n",
+        "env": []
+    },
+    {
+        "id": "b0ce099c8d57f8d0",
+        "type": "comment",
+        "z": "f2a727c82125835f",
+        "name": "Data Validator",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2eeed99163f035c8",
+        "type": "inject",
+        "z": "f2a727c82125835f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "a37897bee059c94b"
+            ]
+        ]
+    },
+    {
+        "id": "a37897bee059c94b",
+        "type": "data-validator",
+        "z": "f2a727c82125835f",
+        "name": "",
+        "datatype": "string",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "63528baaf93df7c9"
+            ]
+        ],
+        "icon": "font-awesome/fa-code"
+    },
+    {
+        "id": "63528baaf93df7c9",
+        "type": "debug",
+        "z": "f2a727c82125835f",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 570,
+        "y": 160,
+        "wires": []
+    }
+]
