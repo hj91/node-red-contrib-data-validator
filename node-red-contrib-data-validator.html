@@ -1,0 +1,62 @@
+<!--
+
+Copyright 2023 Harshad Joshi and Bufferstack.IO Analytics Technology LLP, Pune.
+
+Licensed under the GNU General Public License, Version 3.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.gnu.org/licenses/gpl-3.0.html
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('data-validator', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            datatype: { value: "string" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-code",
+        label: function () {
+            return this.name || "data-validator";
+        },
+        labelStyle: function () {
+            return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="data-validator">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" style="width: 55%;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-datatype"><i class="fa fa-database"></i> Data Type</label>
+        <select id="node-input-datatype">
+            <option value="string">String</option>
+            <option value="number">Number</option>
+            <option value="boolean">Boolean</option>
+            <option value="object">Object</option>
+            <option value="array">Array</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="data-validator">
+    <p>A node that validates the data type of incoming messages' payload.</p>
+    <p>If the payload matches the selected data type, the message is allowed to pass through, otherwise, it's blocked.</p>
+</script>
+
