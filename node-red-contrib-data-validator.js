@@ -27,7 +27,7 @@ module.exports = function (RED) {
 
         node.on('input', function (msg) {
             var selectedType = config.datatype;
-            var payloadType = typeof msg.payload;
+            var payloadType = Array.isArray(msg.payload) ? "array" : typeof msg.payload;
 
             if (payloadType === selectedType) {
                 node.send(msg);
